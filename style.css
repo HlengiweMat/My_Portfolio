@@ -1,0 +1,438 @@
+/* Color Variables based on the Figma Redesign image */
+:root {
+    --bg-color: #0D0D0D;           /* Near Black */
+    --text-color-primary: #F8F8F8; /* White */
+    --accent-color: #00FFC2;       /* Vibrant Green/Cyan */
+    --card-bg-color: #1A1A1A;      /* Slightly lighter background for cards/header */
+    --text-color-secondary: #AAAAAA; /* Silver/Light Gray for body paragraphs */
+}
+.portfolio-theme h2 {
+     color: var(--text-color-primary);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 60px 5% 20px;
+
+    /* Make the line stretch like the screenshot */
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: 8px solid var(--accent-color);
+}
+/* === Modern Hero Section (unique styling, won’t affect other sections) === */
+.modern-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 5%;
+    background-color: var(--bg-color);
+    gap: 40px;
+}
+
+/* Left text container */
+.modern-hero .hero-content {
+    flex: 1;
+}
+
+/* Big heading like screenshot #1 */
+.modern-hero h1 {
+    color: var(--text-color-primary);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+}
+
+.modern-hero h1 span {
+    font-weight: 300; /* lighter name like screenshot */
+    color: var(--text-color-primary);
+}
+
+/* Underline like your current hero line */
+.modern-hero h1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-top: 15px;
+}
+
+/* Hero paragraph */
+.modern-hero .hero-description {
+    font-size: 1.1rem;
+    color: var(--text-color-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Profile image on the right */
+.modern-hero .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.modern-hero .hero-image img {
+    width: 90%;
+    max-width: 380px;
+    border-radius: 600px;
+    box-shadow: 0 4px 12px var(--accent-color);
+}
+
+
+/* --- Global & Body Styling --- */
+body {
+    /* 1. Set the solid background color */
+    background-color: var(--bg-color); 
+    color: var(--text-color-primary);
+    font-family: 'Arial', sans-serif; /* Use a modern, sans-serif font */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    min-height: 100vh; /* Ensure the background fills the viewport */
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--card-bg-color); /* Subtle change from main BG */
+    padding: 15px 5%;
+    box-shadow: 0 4px 12px var(--accent-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav {
+    height: 60px;
+
+}
+nav ul {
+    list-style: none;
+    padding-top: 2;
+    margin: 15;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+a{
+    color:#F8F8F8;
+    text-decoration: none;
+     
+}
+nav ul li a:hover {
+    color: var(--accent-color); /* Highlight navigation on hover */
+}
+
+/* --- Typography --- */
+
+/* Hero Heading (Conceptual Redesign...) */
+header + h2 { 
+    color: var(--accent-color); /* Use the vibrant accent color */
+    font-size: 3em;
+    font-weight: 700;
+    border-bottom: none;
+    padding: 80px 5% 0;
+    margin-top: 0;
+}
+
+/* Hero Description Text */
+header + h2 + p {
+    font-size: 1.1em;
+    color: var(--text-color-primary); 
+    margin: 10px 5% 50px 5%;
+    padding: 0;
+}
+
+h2 {
+    color: var(--text-color-primary);
+    font-size: 2.2em;
+    padding: 20px 5%;
+    /* Use a subtle accent line under sections */
+   /* border-bottom: 2px solid var(--accent-color); */
+    display: inline-block;
+    margin-top: 40px;
+}
+
+h3 {
+    color: var(--text-color-primary); 
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: var(--text-color-secondary); /* Silver/Gray for body text */
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    padding: 0 5%;
+}
+.myCards {
+    /* 1. Enable Flexbox */
+    display: flex;
+    
+    /* 2. Allow cards to wrap to the next line if the screen is too small (responsive) */
+    flex-wrap: wrap; 
+    
+    /* 3. Center the cards horizontally on the page */
+   /* justify-content: center;
+    
+    /* 4. Add vertical and horizontal spacing */
+    padding: 10px 2%;
+    gap: 8px; /* Space between the cards */
+}
+
+/* --- Card Styling --- */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px;
+    justify-content: center;
+    padding: 10px 2%;
+}
+
+.card {
+    background-color: var(--card-bg-color); /* Slightly lighter background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--accent-color);
+    border-left: 3px solid var(--accent-color); /* Accent strip on the side */
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+#certification {
+    background-color: var(--card-bg-color); /* Slightly lighter background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--accent-color);
+    border-left: 3px solid var(--accent-color); /* Accent strip on the side */
+    width: 1000px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 12px var(--accent-color);
+}
+
+/* --- Buttons --- */
+button {
+    background-color: var(--accent-color);
+    color: var(--bg-color); /* Dark text on bright button for contrast */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #20FFB5; /* Slightly brighter on hover */
+    transform: scale(1.03);
+}
+/* --- Skills Section Styling --- */
+.skills-section {
+    padding: 50px 5%;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.skills-section .core-skills-badge {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.skills-section h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: var(--accent-color);
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 15px auto;
+    gap: 10px;
+}
+
+.skill-name {
+    flex: 1;
+    text-align: left;
+    font-weight: bold;
+    color: var(--text-color-primary);
+}
+
+.progress-bar-container {
+    flex: 4;
+    background-color: #333; /* Darker background for progress bar container */
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 10px 0 0 10px;
+    transition: width 1s ease-in-out;
+}
+
+.skill-percentage {
+    flex: 0.5;
+    color: var(--text-color-secondary);
+    font-weight: bold;
+}
+/* Contact Icons */
+.contact-icons {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    justify-content: center; /* centers the icons horizontally */
+}
+
+.contact-icons .icon {
+    align-items: center;
+    font-size: 2rem;
+    color: var(--accent-color);
+    padding: 12px;
+    border-radius: 50%;
+    background-color: var(--card-bg-color);
+    box-shadow: 0 0 10px rgba(0, 255, 194, 0.2);
+    transition: 0.3s ease;
+}
+
+.contact-icons .icon:hover {
+    transform: scale(1.15);
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px #00ffc2;
+}
+.about-text {
+    max-width: 850px;       /* controls width like the screenshot */
+    margin: 50px auto;      /* centers it */
+    text-align: center;     /* centers the text */
+    line-height: 1.8;       /* clean spacing */
+    font-size: 18px;        /* readable size */
+    color: #ffffff;         /* screenshot uses white text */
+    padding: 20px;
+}
+/* Center the About section heading */
+.ab {
+    display: block;             /* ensure it behaves like a block for centering */
+    text-align: center;         /* center the text */
+    margin: 50px auto 20px;     /* vertical spacing */
+    font-size: 4.0em;           /* matches your other h2 size */
+    color: var(--text-color-primary); /* white text */
+    position: relative;         /* needed for pseudo-element underline */
+    padding-bottom: 5px;       /* space for the underline */
+}
+.abz {
+    display: block;             /* ensure it behaves like a block for centering */
+    text-align: center;         /* center the text */
+    margin: 50px auto 20px;     /* vertical spacing */
+    font-size: 4.0em;           /* matches your other h2 size */
+     color: var(--accent-color);
+    position: relative;         /* needed for pseudo-element underline */
+    padding-bottom: 0px;       /* space for the underline */
+}
+
+.abz::after {
+    content: "";
+    display: block;
+    width: 600px;                /* adjust length of underline */
+    height: 4px;                /* thickness */
+    background-color: var(--accent-color); /* vibrant accent */
+    margin: 4px auto 0;         /* center it below the heading */
+    border-radius: 2px;         /* optional rounded ends */
+}
+
+/* Add accent-colored underline like your other headings */
+.ab::after {
+    content: "";
+    display: block;
+    width: 650px;                /* adjust length of underline */
+    height: 5px;                /* thickness */
+    background-color: var(--accent-color); /* vibrant accent */
+    margin: 8px auto 0;         /* center it below the heading */
+    border-radius: 2px;         /* optional rounded ends */
+}
+
+
+/* Center the About section image */
+.ab_img {
+    display: flex;             /* use flex for centering */
+    justify-content: center;   /* horizontally center */
+    margin: 20px 0;            /* optional vertical spacing */
+}
+
+.ab_img img {
+    width: 500px;           /* make it square */
+    height: 500px;          /* same as width */
+    object-fit: cover;      /* ensures the image fills the circle without distortion */
+    border-radius: 50%;     /* makes it circular */
+    box-shadow: 0 4px 12px var(--accent-color);
+ /* optional shadow */
+    display: block;
+    margin: 0 auto;         /* center horizontally */
+}
+.ty-container {
+    text-align: center; /* centers everything inside */
+    margin: 60px 0;
+}
+
+/* Smiling face icon on top */
+.ty-icon {
+    font-size: 3rem; /* bigger icon */
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: var(--card-bg-color);
+    box-shadow: 0 0 10px rgba(0, 255, 194, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ty-icon:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 0 15px #00ffc2;
+}
+
+/* The heading itself */
+.ty {
+   font-family: 'Fredoka One', cursive; /* new creative font */ /* creative font */
+    font-weight: 900; /* bold */
+    font-size: 2.5rem; /* adjust size as needed */
+    color: var(--accent-color);
+    text-shadow: 2px 2px 8px rgba(0, 255, 194, 0.6); /* glowing shadow */
+    margin: 0;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.ty:hover {
+    transform: translateY(-10px) rotate(-2deg);
+    text-shadow: 4px 4px 12px rgba(0, 255, 194, 0.8);
+}
+.readmore{
+    color: black;
+}
+
+
+
